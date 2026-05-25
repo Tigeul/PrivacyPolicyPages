@@ -35,7 +35,7 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
-        const snapshot = await get(ref(db, "privacy_policy/content"));
+        const snapshot = await get(ref(db, "privacy_policy/0/content"));
         if (snapshot.exists()) {
             document.getElementById("content").innerHTML = marked.parse(snapshot.val());
         } else {
